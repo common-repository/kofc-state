@@ -1,0 +1,506 @@
+/** Style Sheet
+ * @Package			Knights of Columbus State WP Plugin
+ * @File				recruiting-scoreboard.css
+ * @Author			Chris Hood (http://chrishood.me)
+ * @Link				https://onthegridwebdesign.com
+ * @copyright		(c) 2016-2022, On the Grid Web Design LLC
+ * @created			7/21/2016
+*/
+
+.otgkofcs_box_shadow {
+	box-shadow: 3px 3px 3px #777;
+}
+
+.otgkofcs_large_text {
+	font-size: 1.2em;
+}
+
+/***** Public Side *****/
+.otgkofcs_table_star_scores_header {
+	position: sticky;
+	z-index: 9999;
+	width: auto !important;
+	margin: 0 0 0 12px !important;
+	border-collapse: collapse !important;
+	border: none !important;
+}
+.otgkofcs_table_star_scores_header th {
+	height: 133px !important;
+	width: 60px !important;
+	position: relative;
+	vertical-align: bottom;
+	padding: 0 !important;
+	font-size: 12px;
+	line-height: 1.0;
+}
+.wp-admin .otgkofcs_table_star_scores_header tr {
+	background: #f1f1f1;
+}
+.otgkofcs_table_star_scores_header th > div {
+	position: relative;
+	top: 0px;
+	left: 66.5px; /* 80 * tan(45) / 2 = 40 where 80 is the height on the cell and 45 is the transform angle*/
+	height: 100%;
+	transform:skew(-45deg,0deg);
+	overflow: hidden;
+	border-left: 1px solid #dddddd;
+	border-right: 1px solid #dddddd;
+	border-top: 1px solid #dddddd;
+	background: lightgrey;  
+}
+.otgkofcs_table_star_scores_header th span {
+	display: inline-block;
+	position: absolute;
+	bottom: 55px; /* 40 cos(45) = 28 with an additional 2px margin*/
+	left: -45px; /*Because it looked good, but there is probably a mathematical link here as well*/
+	width: 146px; /* 80 / cos(45) - 40 cos (45) = 85 where 80 is the height of the cell, 40 the width of the cell and 45 the transform angle*/
+	transform: skew(45deg,0deg) rotate(315deg);
+	text-align: left;
+}
+
+.otgkofcs_table_star_scores {
+	width: auto !important;
+	margin: 0 0 7px 12px !important;
+	border-collapse: collapse;	
+}
+.otgkofcs_table_star_scores tr {
+	padding: 0 !important;
+}
+.otgkofcs_table_star_scores>tbody>:nth-child(even) {
+	background: #eee;
+}
+.otgkofcs_table_star_scores td {
+	box-sizing: border-box;
+	width: 60px !important;
+	padding: 6px 0 !important;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	border-right: 1px solid #dddddd;
+	vertical-align: middle;
+	text-align: center;
+}
+
+@media screen and (max-width: 980px) {
+	.otgkofcs_table_star_scores_header {
+		top: 0 !important;
+	}
+}
+@media screen and (max-width: 700px) {
+	.otgkofcs_table_star_scores_header, .otgkofcs_table_star_scores {
+		margin: 0 !important;
+	}
+	.otgkofcs_table_star_scores_header th {
+		height: 170px !important;
+	}	
+	.otgkofcs_table_star_scores_header th > div {
+		top: 0px;
+		left: 0;
+		transform: none;
+	}
+	.otgkofcs_table_star_scores_header th span {
+		bottom: 70px;
+		transform:  skew(0deg,0deg) rotate(270deg);
+	}
+}
+
+/***** Council & Assembly Shortcodes *****/
+.otgkofcs_box_list div {
+	box-sizing: border-box;
+	vertical-align: top;
+	display: inline-block;
+	width: 320px;
+	height: 230px;
+	margin: 9px;
+	padding: 0;
+	box-shadow: 0 0 7px #000;
+	background-size: cover;
+	border-radius: 7px;
+	border: 1px solid #333;
+}
+
+.otgkofcs_box_list a {
+	display: inline-block;
+	width: 100%;
+	height: 230px;
+	padding: 9px;
+	border-radius: 7px;
+	background: rgba(0, 0, 0, .6);
+	text-align: center;
+	color: #d0d0d0;
+	font-weight: bold;
+	text-shadow: 2px 2px 2px #000;
+}
+.otgkofcs_box_list div:hover {
+	box-shadow: 0 0 12px #000;
+} 
+.otgkofcs_box_list a:hover {
+	text-decoration: none !important;
+	color: #fff;
+}
+.otgkofcs_box_list_line1 {
+	margin: 0;
+	padding: 0 0 5px !important;
+	font-size: 22px;
+
+}
+.otgkofcs_box_list_line2 {
+	margin: 0;
+	padding: 0 0 12px !important;
+	font-size: 19px;
+}
+
+/***** Knight, Council & Assembly Pages *****/
+.otgkofcs_listing_page {
+	max-width: 1400px;
+	margin: 42px auto 0;
+	text-align: center;
+}
+
+.otgkofcs_listing_page_main {
+	display: inline-block;
+	vertical-align: top;
+	width: 59%;
+	min-width: 250px;
+	text-align: left;
+}
+.otgkofcs_listing_page_sidebar {
+	display: inline-block;
+	vertical-align: top;
+	width: 29%;
+	min-width: 200px;	
+	margin: 0 0 0 2%;
+	text-align: left;
+}
+
+.otgkofcs_listing_page_sidebar>div {
+	width: 100%;
+	margin: 0 0 21px;
+	padding: 9px;
+	border-radius: 7px;
+	background-color: rgba(200,200,200,0.9);
+	box-shadow: 4px 4px 4px #333;
+}
+@media screen and (max-width: 550px) {
+	.otgkofcs_listing_page_main {
+		display: block;
+		width: 100%
+	}
+	.otgkofcs_listing_page_sidebar {
+		width: 100%;
+		max-width: 350px;
+		margin: 12px auto 7px;
+	}
+}
+
+.otgkofcs_textbox2 {
+	margin: 0 0 21px;
+	padding: 12px;
+	border-radius: 7px;
+	background-color: rgba(0, 0, 0, .83);
+	box-shadow: 4px 4px 4px #333;
+	text-shadow: 1px 1px 1px black; 
+	font-size: 1.2em;
+	color: #eaeaea;
+	overflow: overlay;
+}
+
+.otgkofcs_textbox2 h2, .otgkofcs_textbox2 h3 {
+	margin-bottom: 17px;
+	color: white;
+}
+
+.otgkofcs_textbox2 a {
+	color: white;
+}
+
+@media screen and (max-width: 550px) {
+	.otgkofcs_textbox2 {
+		padding: 9px 0;
+	}
+	.otgkofcs_textbox2 h2, .otgkofcs_textbox2 h3 {
+		padding-left: 9px;
+	}
+	.otgkofcs_textbox2 .wp-post-image {
+		float: none;
+		display: block;
+		margin: 1px auto 4px;
+	}
+	.otgkofcs_textbox2 p {
+		padding-left: 5px;
+		padding-right: 5px;
+	}	
+}
+
+.otgkofcs_council_page_icon {
+	width: 32px;
+	height: 32px;
+	margin-left: 12px;
+}
+
+/*** Knight Page ***/
+.otgkofcs_knight_profile_img {
+	display: block;
+	margin: 3px auto 7px;
+	box-shadow: 3px 3px 3px #333;
+}
+.otgkofcs_knight_social_link {
+	vertical-align: top;
+	line-height: 20px;
+	font-size: 16px;
+}
+.otgkofcs_knight_social_icon {
+	width: 20px;
+	height: 20px;
+	margin-right: 12px;
+}
+
+/***** Admin ****/
+/*** General ***/
+.otgkofcs_success, .otgkofcs_error, .otgkofcs_warning, .otgkofcs_message {
+	display: block;
+	margin: 12px -10px;
+	padding: 7px 35px;
+	color: #111111;
+	font-weight: bold;
+}
+.otgkofcs_success {
+	background-color: #55ee55;
+	border-bottom: solid 2px #007700;
+}
+.otgkofcs_error {
+	background-color: #ee5555;
+	border-bottom: solid 2px #770000;
+}
+.otgkofcs_warning {
+	background-color: #eeee55;
+	border-bottom: solid 2px #777700;
+}
+.otgkofcs_message {
+	background-color: #5555ee;
+	border-bottom: solid 2px #000077;
+	color: #f6f6f6;
+}
+
+.otgkofcs_box_shadow {
+	box-shadow: 3px 3px 3px #777;
+}
+
+section.otgkofcs_admin500 {
+	display: inline-block;
+	vertical-align: top;
+	max-width: 500px;
+	margin-right: 12px;
+}
+section.otgkofcs_admin700 {
+	display: inline-block;
+	vertical-align: top;
+	max-width: 700px;
+	margin-right: 12px;
+}
+
+section.otgkofcs_score_input {
+	box-sizing: border-box;
+	padding: 7px 0;
+	column-width: 450px;
+}
+
+.otgkofcs_score_input_header {
+	overflow-x: hidden;
+	white-space: nowrap;
+}
+.otgkofcs_score_input_header div {
+	display: inline-block;
+	width: 500px;
+}
+
+.otgkofcs_column_header1 {
+	display: inline-block;
+	width: 100px;
+	text-align: center;
+	font-weight: bold;
+}
+
+/*** Forms ***/
+.otgkofcs_form1 {
+	box-sizing: border-box;
+}
+
+.otgkofcs_form1 p:not(.otgkofcs_full) {
+	display: inline-block;
+	width: 500px;
+	max-width: 100%;
+}
+
+.otgkofcs_form1 h3 .button-primary {
+	margin-left: 12px !important;
+}
+.otgkofcs_form1 label {
+	display: inline-block;
+	vertical-align: top;
+	width: 150px;
+	padding: 0 6px;
+	text-align: right;
+	font-weight: bold;
+}
+.otgkofcs_form1 select, .otgkofcs_form1 input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]) {
+	width: 300px;
+	padding: 3px 5px;
+	border-radius: 3px;
+}
+.otgkofcs_form1 input[type=checkbox], .otgkofcs_form1 input[type=radio] {
+	width: 17px;
+}
+
+.otgkofcs_form1 .otgkofcs_radio_left {
+	width: auto;
+	padding: 0 17px 0 0;
+	font-weight: normal;
+}
+.otgkofcs_form1 .otgkofcs_radio_right {
+	width: auto;
+	padding: 0 0 0 17px;
+	font-weight: normal;
+}
+
+.otgkofcs_input_small {
+	width: 100px !important;
+}
+.otgkofcs_form1 textarea {
+	width: 300px;
+	height: 200px;
+	padding: 3px 5px;
+	border-radius: 3px;
+	background: #ddd;
+}
+
+.otgkofcs_form1 .otgkofcs_full select,
+.otgkofcs_form1 .otgkofcs_full input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]),
+.otgkofcs_form1 .otgkofcs_full textarea {
+	width: 450px;
+}
+
+.otgkofcs_form1 .otgkofcs_red_x {
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	padding: 0;
+	background: #d00;
+	border-radius: 11px;
+	border: 2px solid #000;
+	text-align: center;
+	color: #000;
+	line-height: 12px;
+	font-size: 27px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.otgkofcs_form1 .ui-state-default {
+	position: relative;
+	overflow: visible;
+}
+
+.otgkofcs_form1 .g-recaptcha {
+	padding: 0 0 7px 156px;
+}
+
+@media screen and (max-width: 550px) {
+	.otgkofcs_form1 p, .otgkofcs_form1 label {
+		display: block;
+		width: 100%;
+		text-align: left;
+	}
+	.otgkofcs_form1 input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]), .otgkofcs_form1 select, .otgkofcs_form1 textarea,
+	.otgkofcs_form1 .otgkofcs_full select,
+	.otgkofcs_form1 .otgkofcs_full input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]),
+	.otgkofcs_form1 .otgkofcs_full textarea {
+		display: block;
+		width: 100%;
+	}	
+	.otgkofcs_form1 .g-recaptcha {
+		padding: 0 0 7px 0;
+	}	
+}
+
+.otgkofcs_form1 .ui-icon {
+	display: inline-block;
+}
+
+.otgkofcs_form2 select,
+.otgkofcs_form2 input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]),
+.otgkofcs_form2 textarea {
+	display: block;
+	width: 100%;
+	margin: 21px auto;
+	padding: 5px 7px;
+	border-radius: 3px;
+	background: #ddd;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+.otgkofcs_form2 textarea {
+	height: 200px;
+}
+.otgkofcs_form2 .g-recaptcha {
+	display: block;
+	width: 100%;
+	margin: 21px auto;
+}
+.otgkofcs_form2 input[type=submit] {
+	display: block;
+	width: 150px;
+	margin: 21px auto;
+	padding: 7px 12px;
+	border-radius: 3px;	
+	font-weight: bold;
+}
+
+#otgkofcs_sortable {
+	max-width: 600px;
+}
+#otgkofcs_sortable input {
+	width: calc(100% - 52px);
+}
+
+/*** Datatables ***/
+.otgkofcs_table1 {
+	margin: 7px 10px 12px;
+	border-collapse: collapse;
+}
+
+.otgkofcs_table1 thead {
+	background-color: #4c4c4c;
+	background: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+	text-align: center;
+	color: #eee;
+}
+.otgkofcs_table1 th {
+	padding: 6px 12px;
+}
+.otgkofcs_table1 th a {
+	color: #fff;
+}
+
+.otgkofcs_table1 td {
+	margin: 0;
+	padding: 5px 12px;
+	text-align: center;
+}
+.otgkofcs_table1 .even {
+	background-color: #aaa;
+}
+.otgkofcs_table1 .odd {
+	background-color: #ddd;
+}
+.otgkofcs_table1 .odd:hover, .table1 .even:hover {
+	background: #fff;
+}
+.dataTables_filter {
+	margin-bottom: 7px;
+}
+.dataTables_filter input {
+	background-color: white !important;
+}
+.dataTables_length select {
+	min-width: 75px;
+	background-color: white !important;
+}
